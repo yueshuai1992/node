@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+	meta(charset="UTF-8")
+	title Document
+	link(rel="stylesheet", href="style/bootstrap.min.css")
+body
+	h1 用户列表
+	a.btn.btn-primary(href="/adduser") 添加用户 
+	a.btn.btn-primary(href="/book") 跳转到书籍列表 
+	table.table.table-border
+		thead
+			tr
+				td 用户名
+				td 密码
+				td 性别
+				td 年龄
+				//- td 编辑
+				//- td 删除
+		tbody
+		each value,key in data
+			tr
+				td=value.username
+				td=value.password
+				td=value.sex
+				td=value.age
+				//- td 
+				//- 	a 编辑
+				//- td
+				//- 	a 删除

@@ -1,0 +1,17 @@
+[
+    {
+        "username": "xxxxxx",
+        "password": "111111",
+        "permission":0
+    },
+    {
+        "username": "aaaaaa",
+        "password": 111111,
+        "permission":1
+    },
+    {
+        "username": "aa",
+        "password": "333333",
+        "permission":2
+    }
+]

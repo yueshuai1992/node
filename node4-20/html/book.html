@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="../public/bootstrap.min.css">
+	<link rel="stylesheet" href="../public/head_item.css">
+	<script src = "../public/jquery-1.11.1.js"></script>
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="../public/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<div class="head_item">
+		<div class="headbox">
+			<ul class="head_nav">
+			<li class="list1"><a href="/userlist">用户列表</a></li>
+			<li class="list2"><a hhref='/booklist'>书籍列表</a></li>
+			<li class="list3"><a href="">出版</a></li>
+			<li class="list4"><a href="">网络文学</a></li>
+			<li class="list5"><a href="">手机看书</a></li>
+			</ul>
+			<div class="screen">
+				<input class="scr_text" type="text">
+				<p class="scr_p">筛选</p>
+			</div>
+			<ul class="head_add">
+				<li type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">添加用户</li>
+				<li type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">添加书籍</li>
+			</ul>
+		</div>
+		<!--  -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="exampleModalLabel">添加用户</h4>
+		      </div>
+		      <div class="modal-body">
+		        <form>
+		          <div class="form-group">
+		            <label for="recipient-name" class="control-label" >姓名:</label>
+		            <input type="text" class="form-control" id="recipient-name" name="name">
+		          </div>
+		          <div class="form-group">
+		            <label for="message-text" class="control-label">职业:</label>
+		            <input type="password" class="form-control" id="recipient-name" name="profession">
+		          </div>
+		           <div class="form-group">
+		            <label for="message-text" class="control-label">年龄:</label>
+		            <input type="password" class="form-control" id="recipient-name" name="age">
+		          </div>
+		           <div class="form-group">
+		            <label for="message-text" class="control-label">借阅时间:</label>
+		            <input type="password" class="form-control" id="recipient-name" name="time">
+		          </div>
+		           <div class="form-group">
+		            <label for="message-text" class="control-label">书名:</label>
+		            <input type="password" class="form-control" id="recipient-name" name="bookName">
+		          </div>
+		           <div class="form-group">
+		            <label for="message-text" class="control-label">归还时间:</label>
+		            <input type="password" class="form-control" id="recipient-name" name="returnTime">
+		          </div>
+
+		        </form>
+		      </div>
+		      <div class="modal-footer">
+		      <input type="submit" class="btn btn-default" data-dismiss="modal" value="登录">
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<!--  -->
+
+	</div>
+	<div class="continue">
+		<table class="table table-striped">
+			<!-- 行 -->
+		  <tr>
+		    <th>ISBN</th> <!-- 单元格 -->
+		    <th>书名</th>
+		    <th>价格</th> <!-- 单元格 -->
+		    <th>类别</th>
+		    <th>作者</th> <!-- 单元格 -->
+		    <th>出版社</th>
+		  </tr>
+		  <tr>
+		    <td>9787111376613</td>
+		    <td>JavaScript权威指南（第6版）</td>
+		    <td>￥100</td>
+		    <td>计算机/网络</td>
+		    <td>弗兰纳根</td>
+		    <td>机械工业出版社</td>
+		  </tr>
+		  <tr>
+		    <td>9787115275790</td>
+		    <td>JavaScript高级程序设计(第3版)</td>
+		    <td>￥84</td>
+		    <td>计算机/网络</td>
+		    <td>Nicholas C. Zakas </td>
+		    <td>人民邮电出版社</td>
+		  </tr>
+
+ <script>
+
+ 		function addData(){
+ 			var result = $(".control-label").val();
+ 			if(result==""){
+ 				return false;
+ 			}else{
+ 				return true;
+ 			}
+ 		}
+ 		$(".scr_p").click(function(){
+ 			var scr_text = $(".scr_text").val();
+ 			if(scr_text=="张三"){
+ 				console.log("haha")
+ 				window.location.href = "http://www.baidu.com"
+ 			}
+ 		})
+
+		// $("li").click(function(){
+		// 	alert("haha")
+		// 	$(this).css("background-color","#325b9b");
+		// 	$(this).siblings().css("background-color","#214c90")
+		// })
+</script>
+
+</body>
+</html>

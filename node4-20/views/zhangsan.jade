@@ -1,0 +1,21 @@
+extend list.jade
+block nav
+    table.table.table-striped
+      // 行
+      tr
+        th 姓名
+        // 单元格
+        th 职业
+        th 年龄
+        // 单元格
+        th 借阅时间
+        th 书名
+        // 单元格
+        th 归还时间
+      tr
+      -for(var attr in zhangsan)
+        td=zhangsan[attr]
+      -for(x=0;x<15;x++)
+        tr
+        - for(y=0;y<6;y++)
+          td --

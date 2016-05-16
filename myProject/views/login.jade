@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+	meta(charset="UTF-8")
+	title Document
+body
+	h1 用户登录
+	h2 #{info}
+	form(action="/index",method="post")
+		label 用户名
+		input(name="username")
+		label 密码
+		input(name="password",type="password")
+		input(value="登录",type="submit")
+		a(href="/regist") 用户注册

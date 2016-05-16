@@ -1,0 +1,56 @@
+[
+    {
+        "username": "lee",
+        "password": "aaa",
+        "sex": "male",
+        "age": 20
+    },
+    {
+        "username": "zhang",
+        "password": "bbb",
+        "sex": "male",
+        "age": 21
+    },
+    {
+        "username": "wang",
+        "password": "ccc",
+        "sex": "female",
+        "age": 22
+    },
+    {
+        "username": "zhao",
+        "password": "ddd",
+        "sex": "male",
+        "age": 23
+    },
+    {
+        "username": "liu",
+        "password": "eee",
+        "sex": "male",
+        "age": 24
+    },
+    {
+        "username": "qwer",
+        "password": "wqer",
+        "sex": "wqer",
+        "age": "wqer"
+    },
+    {
+        "username": "aaaaaa",
+        "password": "aaaaaa",
+        "sex": "aaaaaa",
+        "age": "aaaaaa"
+    },
+    {
+        "username": "qwerwqer",
+        "password": "wqerwqer",
+        "sex": "wqerwqer",
+        "age": "wqerwqer"
+    },
+    {
+        "username": "123123",
+        "password": "asdfasdf",
+        "sex": "n",
+        "age": "100"
+    }
+]

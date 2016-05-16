@@ -1,0 +1,122 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title login
+    // 新 Bootstrap 核心 CSS 文件
+    link(rel='stylesheet', href='bootstrap.min.css')
+    link(rel='stylesheet', href='head_item.css')
+    script(src='jquery-1.11.1.js')
+    // 最新的 Bootstrap 核心 JavaScript 文件
+    script(src='bootstrap.min.js')
+  body
+    .head_item
+      .headbox
+        ul.head_nav
+          a(href='/userlist')
+            li.list1 用户列表
+          a(href='/booklist')
+            li.list2 书籍列表
+          a(href='')
+            li.list3 出版
+          a(href='')
+            li.list4 网络文学
+          a(href='')
+            li.list5 手机看书
+        .screen
+          input.scr_text(type='text')
+          p.scr_p 筛选
+        ul.head_add
+            li.btn.btn-primary(type='button', data-toggle='modal', data-target='#exampleModal', data-whatever='@mdo') 添加用户
+            li.btn.btn-primary(type='button', data-toggle='modal', data-target='#exampleModal2', data-whatever='@mdo') 添加书籍
+    #exampleModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+            h4#exampleModalLabel.modal-title 添加用户
+          .modal-body
+            form(action='/userlist', method='get', onsubmit="return addData();")
+              .form-group
+                label.control-label(for='recipient-name') 姓名:
+                input#recipient-name.form-control.addData(type='text', name='name')
+              .form-group
+                label.control-label(for='message-text') 职业:
+                input#recipient-name.form-control(type='text', name='profession')
+              .form-group
+                label.control-label(for='message-text') 年龄:
+                input#recipient-name.form-control(type='text', name='age')
+              .form-group
+                label.control-label(for='message-text') 借阅时间:
+                input#recipient-name.form-control(type='text', name='time')
+              .form-group
+                label.control-label(for='message-text') 书名:
+                input#recipient-name.form-control(type='text', name='bookName')
+              .form-group
+                label.control-label(for='message-text') 归还时间:
+                input#recipient-name.form-control(type='text', name='returnTime')
+              .modal-footer
+                input.btn.btn-default(type='submit', value='添加')
+    #exampleModal2.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+            h4#exampleModalLabel.modal-title 添加书籍
+          .modal-body
+            form(action='/booklist', method='get' onsubmit="return addData2();")
+              .form-group
+                label.control-label(for='recipient-name') ISBN:
+                input#recipient-name.form-control.addData2(type='text', name='isbn')
+              .form-group
+                label.control-label(for='message-text') 书名:
+                input#recipient-name.form-control(type='text', name='bookName')
+              .form-group
+                label.control-label(for='message-text') 价格:
+                input#recipient-name.form-control(type='text', name='cost')
+              .form-group
+                label.control-label(for='message-text') 类别:
+                input#recipient-name.form-control(type='text', name='classes')
+              .form-group
+                label.control-label(for='message-text') 作者:
+                input#recipient-name.form-control(type='text', name='writer')
+              .form-group
+                label.control-label(for='message-text') 出版社:
+                input#recipient-name.form-control(type='text', name='press')
+              .modal-footer
+                input.btn.btn-default(type='submit', value='添加')
+    script.
+      $(".scr_p").click(function(){
+      var scr_text = $(".scr_text").val();
+      if(scr_text=="张三"){
+        window.location.href = "/zhangsan"
+      }
+      if(scr_text=="王五"){
+        window.location.href = "/wangwu"
+      }
+      if(scr_text=="赵四"){
+        window.location.href = "/zhaosi"
+      }
+      if(scr_text==""){
+        window.location.href ="/userlist"
+      }
+      })
+      function addData(){
+      var result = $(".addData").val();
+      if(result==""){
+      return false;
+      }else{
+      return true;
+      }
+      }
+      function addData2(){
+      var result = $(".addData2").val();
+      if(result==""){
+      return false;
+      }else{
+      return true;
+      }
+      }
+block nav

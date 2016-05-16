@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>login</title>
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="public/form.css">
+	<script src = "js/jquery-1.11.1.js"></script>
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+		<li type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" class="btn btn-primary">登   录</li>
+  <li type="button" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo" class="btn btn-primary">注   册</li>
+  <div id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" class="modal fade">
+    <div role="document" class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+          <h4 id="exampleModalLabel" class="modal-title">用户登录</h4>
+        </div>
+        <div class="modal-body">
+          <form action="/login" method="get" >
+            <div class="form-group">
+              <label for="recipient-name" class="control-label">用户名:</label>
+              <input id="recipient-name" type="text" name="username" placeholder="请输入用户名！" class="form-control"/>
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="control-label">密码:</label>
+              <input id="recipient-name" type="password" name="password" placeholder="请输入密码！" class="form-control"/>
+            </div>
+            <div class="modal-footer">
+              <input type="submit" value="登录" class="btn btn-default"/>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" class="modal fade">
+    <div role="document" class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+          <h4 id="exampleModalLabel" class="modal-title">用户注册</h4>
+        </div>
+        <div class="modal-body">
+          <form action="/enroll" method="get" onsubmit="return submitTest();">
+            <div class="form-group">
+              <label for="recipient-name" class="control-label">用户名:</label>
+              <input id="recipient-name" type="text" name="username" placeholder="请输入用户名（5-18）位！" class="form-control userText" />
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="control-label">密码:</label>
+              <input id="recipient-name" type="password" name="password" placeholder="请输入（6-18）位密码！" class="form-control userPass" />
+            </div>
+            <div class="modal-footer">
+              <input type="submit" value="注册" class="btn btn-default"/>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+	function submitTest() {
+		var regUser = /^(?!_)(?!.*?_$)[a-zA-Z0-9_\u4e00-\u9fa5]{5,18}$/;
+		var regPass = /^[a-zA-Z0-9][a-zA-Z0-9_]{6,18}/
+		var userText = $(".userText").val();
+		var userPass = $(".userPass").val();
+		var resultText = regUser.test(userText);
+		console.log(resultText);
+		var resultPass = regPass.test(userPass);
+		console.log(resultPass)
+		if(resultPass==true&&resultText==true){
+			return true;
+		}else{
+			return false;
+		}
+    }
+</script>
+</body>
+</html>

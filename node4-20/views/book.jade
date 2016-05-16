@@ -1,0 +1,23 @@
+extend list.jade
+block nav
+    table.table.table-striped
+      // 行
+      tr
+        th ISBN
+        // 单元格
+        th 书名
+        th 价格
+        // 单元格
+        th 类别
+        th 作者
+        // 单元格
+        th 出版社
+
+        - for(i in booklist)
+           tr
+           - for(j in booklist[i])
+              td=booklist[i][j]
+        - for(x=0;x<15;x++)
+           tr
+            - for(y=0;y<6;y++)
+              td --
